@@ -79,7 +79,7 @@ def server_tcp(port):
                 if path.endswith('.jpg') or path.endswith('.ico') and not is_case_404_or_301:
                     file_content, content_len = read_file("rb", path)
                 else:
-                    file_content, content_len = read_file("rb", path)
+                    file_content, content_len = read_file("r", path)
                 # file dose not exist
                 if file_content == "" and not is_case_404_or_301:
                     server_response = FILE_NOT_EXIST_CASE_404.encode('utf-8')
